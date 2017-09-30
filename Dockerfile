@@ -34,3 +34,9 @@ LABEL name="Richard's test label"
 # ARG - pass build time variables, can set default.  use --build-arg build=buildnumber
 ARG build
 ARG builduser=user
+#
+# SHELL can override default shell
+#
+# HEALTHCHECK
+HEALTHCHECK --interval=60s --timeout=1m --retries=5 CMD curl http://www.google.co.uk || exit 1
+
